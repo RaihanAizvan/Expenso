@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/f-key.png" />
+</head>
+
+<body class="light">
+  <header class="header-div">
+    <div class="left-section-div" style="font-size: 19px">
+      <div class="hamburger-menu">☰</div>
+      <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/f-key.png" alt="f-key" />
+      <p>EXPENSO</p>
+    </div>
+    <div class="middle-section-div">Head</div>
+    <div class="right-section-div">
+      <!-- theme switcher -->
+      <a class="theme">
+        <img class="theme-switcher" width="35" height="35"
+          src="https://img.icons8.com/ios/50/partly-cloudy-night--v1.png" alt="partly-cloudy-night--v1" />
+        <p class="theme-p">theme</p>
+      </a>
+      <!-- set route to /login -->
+      <% if (locals.loggedInn) { %>
+        <a href="#" id="logoutLink">
+          <% } else { %>
+            <a href="/login">
+              <% } %>
+                <% if (locals.loggedInn) { %>
+                  <img src="https://img.icons8.com/?size=100&id=VTOU0AOwSnkY&format=png&color=000000" class="logo"
+                    height="50" width="50" alt="logo" />
+                  <p>logout</p>
+                  <% } else { %>
+
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABsElEQVR4nMXVS4uOYRgH8F+RDUWNyGFkwVBEUZayUEPhE/AFmN2sRjNfgCysrRRKobGeJkWNlbJzSjklpylGNAszr6663np6ep/D+xL/erq7zs91um/+I1bgNK5jBldxBqv+hvPdeIwOXmMOb5J+hr1/4nxLOn2LoyXZKN7hA7YOGuAGFrCjQj6C77g2iPM1WMSFBr1LqRf6feFg1vlEg96p1DtQ4A3lQMRZiX1peLJlgP0F3pHkxVmJlfiBiy1K9BOr849jGMYzwHjSlZlcySbvrJB3mxx7IcvS6fEFvyc24H2O42hJdqwwphuT13cGge14lQaxDw/TcScXLrIoo1UPAsO4i2X8ys2NTX6SvPhuY3PJbih3o/bPD+ELvmGiUIYugp7KHn0qjWkjtuEzXtRscRe78BIf+7kyoixfa6anV5DI5I4W2JMNOq8/TGVP4vatxSSWetS8CZvSLvpVi1t4ajA8x80mpVncHzDAg7Svxb18ZMZwGGsb9Nel3ljahX0tzuXYFe+S+eQ9yuziDDr4Rb3gnW2b7nocz6ZfzgttOh/9OIMOfshDr3Zr/wl+A1wPdjOm/qSzAAAAAElFTkSuQmCC"
+                      class="logo" alt="logo" />
+                    <P>signup</P>
+                    <% } %>
+            </a>
+    </div>
+  </header>
+  <section class="container-section">
+    <aside>
+      <div class="item-1">
+        <img width="20" height="20" src="https://img.icons8.com/?size=100&id=86527&format=png&color=000000"
+          alt="partly-cloudy-night--v1" />&MediumSpace;&MediumSpace;home
+      </div>
+      <div class="item-1">
+        <img width="20" height="23" src="https://img.icons8.com/?size=100&id=KSOtMbt2xoRc&format=png&color=000000"
+          alt="partly-cloudy-night--v1" />&MediumSpace;&MediumSpace;dashboard
+      </div>
+      <div class="item-4">
+        <img width="25" height="25" src="https://img.icons8.com/?size=100&id=HWo72rUOuRIH&format=png&color=000000"
+          alt="partly-cloudy-night--v1" />transcations
+      </div>
+      <!-- <div class="item-2">content</div> -->
+      <!-- <div class="item-3">budget</div> -->
+      <div class="item-5">
+        <img width="20" height="23" src="https://img.icons8.com/?size=100&id=122150&format=png&color=000000"
+          alt="partly-cloudy-night--v1" />&MediumSpace;&MediumSpace;Balance
+      </div>
+      <div class="item-6">
+        <img width="20" height="23" src="https://img.icons8.com/?size=100&id=87093&format=png&color=000000"
+          alt="partly-cloudy-night--v1" />&MediumSpace;&MediumSpace;tasks
+      </div>
+      <div class="item-7">
+        <img width="20" height="23" src="https://img.icons8.com/?size=100&id=60025&format=png&color=000000"
+          alt="partly-cloudy-night--v1" />&MediumSpace;&MediumSpace;expense
+      </div>
+      <p>System Preference</p>
+      <div class="item-8">
+        <img width="20" height="23" src="https://img.icons8.com/?size=100&id=2969&format=png&color=000000"
+          alt="partly-cloudy-night--v1" />&MediumSpace;&MediumSpace;settings
+      </div>
+      <div class="item-8">
+        <img width="20" height="23" src="https://img.icons8.com/?size=100&id=9730&format=png&color=000000"
+          alt="partly-cloudy-night--v1" />&MediumSpace;&MediumSpace;support
+      </div>
+    </aside>
+
+    <div class="inner-section">
+      <div class="grid-container-div">    
+        <div class="grid-item-1 grid-item">
+          <div class="first-section">Total Expense</div>
+          <div class="second-section">
+            <p id="counter">2006</p>
+          </div>
+          <div class="third-section">
+
+            <form action="/addExpense" method="post">
+              <input type="text" class="input-field" name="expenseName">
+
+
+              <input type="text" class="input-field" name="expenseMoney">
+
+
+              <input type="submit" class="submit-btn" value="+">
+
+            </form>
+          </div>
+        </div>
+        <div class="grid-item-2 grid-item">
+          <div class="first-section">Total Income</div>
+          <div class="second-section">
+            <p id="counter">9877</p>
+          </div>
+          <div class="third-section">
+
+            <form action="/addIncome" method="post">
+              <input type="text" class="input-field" name="incomeName">
+
+
+              <input type="text" class="input-field" name="incomeMoney">
+
+
+              <input type="submit" class="submit-btn" value="+">
+
+            </form>
+          </div>
+        </div>
+        <div class="grid-item-3 grid-item">3</div>
+        <div class="grid-item-4 grid-item">4</div>
+        <div class="grid-item-5 grid-item">5</div>
+        <div class="grid-item-6 grid-item">6</div>
+        <div class="grid-item-7 grid-item">7</div>
+        <!-- <div class="grid-item-8 grid-item">8</div> -->
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <p>Are you sure you want to logout?</p><br />
+        <input type="button" id="confirmLogout" value="Yes" onclick="window.location.href='/login'" />
+        <button id="cancelLogout" class="close">No</button>
+      </div>
+    </div>
+  </section>
+  <script src="js/dom.js"></script>
+</body>
+
+</html>
