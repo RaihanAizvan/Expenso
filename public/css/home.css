@@ -133,8 +133,9 @@
   background-color: rgba(255, 255, 255, 0.154);
 }
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: 100;
+  font-family: "Quicksand", sans-serif;
+
+  font-weight: 200;
   color: rgb(0, 0, 0);
   background: var(--grad);
   background-size: 2050px;
@@ -196,10 +197,12 @@ ul {
   border-radius: 30px;
   padding: 5px;
   transition: all linear 0.1s;
+  margin-bottom: 10px;
+  margin-left: 2px;
 }
-.header-div .right-section-div p.theme-p {
-  margin-top: 10px;
-}
+/* .header-div .right-section-div p.theme-p {
+
+} */
 .header-div .right-section-div img.theme-switcher:hover {
   background-color: rgba(172, 172, 172, 0.493);
 }
@@ -482,8 +485,81 @@ inner section */
   display: inline;
   border-radius: 5px;
 }
+
+/* grid item 3 */
+
 .grid-item-3 {
   grid-area: item3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.grid-item-3 div {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+.grid-item-3 .first-section {
+  flex: 1;
+  font-weight: 500;
+}
+.grid-item-3 .second-section {
+  flex: 3;
+}
+.grid-item-3 .second-section p {
+  font-size: 300%;
+  font-weight: 500;
+  font-family: "Merriweather Sans", sans-serif;
+}
+.grid-item-3 .third-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  /* padding: 0 10px; */
+}
+.grid-item-3 .third-section div {
+  height: 35px;
+}
+.grid-item-3 .third-section form {
+  display: flex;
+  justify-content: space-around;
+}
+.grid-item-3 .third-section .input-field {
+  background: transparent !important;
+  border: none;
+  min-width: 90%;
+  height: 35px;
+}
+.grid-item-3 .third-section .input-field:focus {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.grid-item-3 .third-section .input-field {
+  background: transparent !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 35px;
+  min-width: none;
+  width: 38%;
+}
+.grid-item-3 .third-section .input-field:focus {
+  outline: none;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.grid-item-3 .third-section .submit-btn {
+  background-color: transparent;
+  padding: 5px;
+  font-size: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  display: inline;
+  border-radius: 5px;
 }
 .grid-item-4 {
   grid-area: item4;

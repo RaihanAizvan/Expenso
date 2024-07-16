@@ -31,9 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   confirmLogout.onclick = function () {
     modal.style.display = "none"
-    // Redirect to login page or logout user session
-    window.location.href = "/login"
-    // Add your logout logic here
+    // Redirect to entry page or logout user session
+    window.location.href = "/logout"
   }
 
   window.onclick = function (event) {
@@ -43,15 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
-//theme switch
-
-// DOM Elements
+// Theme switch
 
 const themeButton = document.querySelector(".theme")
 const body = document.body
 
 // Apply the cached theme on reload
-
 const theme = localStorage.getItem("theme")
 
 if (theme) {
@@ -59,14 +55,16 @@ if (theme) {
 }
 
 // Button Event Handler
-
+let flag = 0
+console.log(flag)
 themeButton.onclick = () => {
-  console.log("clicked")
-  if (body.classList.contains("light")) {
-    body.classList.replace("light", "dark")
-    localStorage.setItem("theme", "dark")
-  } else {
-    body.classList.replace("dark", "light")
-    localStorage.setItem("theme", "light")
-  }
+  body.classList.toggle("light")
+  body.classList.toggle("dark")
+  const theme = body.classList.contains("dark") ? "dark" : "light"
+  localStorage.setItem("theme", theme)
+  console.log(`switched to ${theme} theme`)
 }
+//body
+
+
+// Check if session is valid on page load

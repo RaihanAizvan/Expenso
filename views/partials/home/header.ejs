@@ -1,0 +1,64 @@
+<header class="header-div">
+  <div class="left-section-div" style="font-size: 19px">
+    <div class="hamburger-menu">☰</div>
+    <img
+      width="30"
+      height="30"
+      id="fution-logo"
+      src="https://img.icons8.com/ios-filled/50/f-key.png"
+      alt="f-key"
+    />
+    <p>EXPENSO</p>
+  </div>
+  <div class="middle-section-div"><%=name%></div>
+  <div class="right-section-div">
+    <!-- theme switcher -->
+    <a class="theme">
+      <img
+        class="theme-switcher"
+        width="35"
+        height="35"
+        src="https://img.icons8.com/ios/50/partly-cloudy-night--v1.png"
+        alt="partly-cloudy-night--v1"
+      />
+      <p class="theme-p">theme</p>
+    </a>
+    <!-- set route to /login -->
+    <!-- <%// if (locals.loggedInn) { %> -->
+    <a href="#" id="logoutLink">
+      <img
+        src="https://img.icons8.com/?size=100&id=VTOU0AOwSnkY&format=png&color=000000"
+        class="logo"
+        height="50"
+        width="50"
+        alt="logo"
+      />
+      <p>logout</p>
+    </a>
+    <% //} else { %>
+    <!-- <a href="/signup">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABsElEQVR4nMXVS4uOYRgH8F+RDUWNyGFkwVBEUZayUEPhE/AFmN2sRjNfgCysrRRKobGeJkWNlbJzSjklpylGNAszr6663np6ep/D+xL/erq7zs91um/+I1bgNK5jBldxBqv+hvPdeIwOXmMOb5J+hr1/4nxLOn2LoyXZKN7hA7YOGuAGFrCjQj6C77g2iPM1WMSFBr1LqRf6feFg1vlEg96p1DtQ4A3lQMRZiX1peLJlgP0F3pHkxVmJlfiBiy1K9BOr849jGMYzwHjSlZlcySbvrJB3mxx7IcvS6fEFvyc24H2O42hJdqwwphuT13cGge14lQaxDw/TcScXLrIoo1UPAsO4i2X8ys2NTX6SvPhuY3PJbih3o/bPD+ELvmGiUIYugp7KHn0qjWkjtuEzXtRscRe78BIf+7kyoixfa6anV5DI5I4W2JMNOq8/TGVP4vatxSSWetS8CZvSLvpVi1t4ajA8x80mpVncHzDAg7Svxb18ZMZwGGsb9Nel3ljahX0tzuXYFe+S+eQ9yuziDDr4Rb3gnW2b7nocz6ZfzgttOh/9OIMOfshDr3Zr/wl+A1wPdjOm/qSzAAAAAElFTkSuQmCC"
+        class="logo"
+        alt="logo"
+      />
+      <p>Signup</p>
+    </a> -->
+    <% //} %>
+  </div>
+</header>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <!-- <span class="close">&times;</span> -->
+    <p>Are you sure you want to logout?</p>
+    <br />
+    <input
+      type="button"
+      id="confirmLogout"
+      value="Yes"
+      onclick="window.location.href='/logout'"
+    />
+    <button id="cancelLogout" class="close">No</button>
+  </div>
+</div>

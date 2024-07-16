@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <title>EXPENSO | signup</title>
     <link rel="stylesheet" href="/css/login.css" />
     <link rel="stylesheet" href="nav.css" />
     <link rel="stylesheet" href="footer.css" />
@@ -19,41 +19,41 @@
 
     <div class="container">
       <div class="login-box">
-        <h2>Login</h2>
-        <% if (typeof error !== 'undefined') { %>
-        <p class="error"><%= error %></p>
-        <% } %>
-        <form action="/home" method="post">
+        <h2>Signup</h2>
+        <!-- <p class="error"></p> -->
+        <form action="/signup" method="post">
           <div class="input-box">
-            <input type="email" name="email" required value="<%= typeof email
-            !== 'undefined' ? email : '' %>" <% if (typeof error !==
-            'undefined') { %> style ='border:1px solid red;' <% } %> />
+            <input
+              type="text"
+              name="name"
+              required
+              value="<%= typeof email !== 'undefined' ? name : '' %>"
+            />
+            <label id="name">Name</label> 
+          </div>
+          <div class="input-box">
+            <input
+              type="email"
+              name="email"
+              required
+              value="<%= typeof email !== 'undefined' ? email : '' %>"
+            />
+            <% if (typeof error !== 'undefined') { %>
+            <p class="error"><%= error %></p>
+            <% } %>
             <label id="email">Email</label>
           </div>
           <div class="input-box">
-            <input type="password" name="password" required <% if (typeof error
-            !== 'undefined') { %> style ='border:1px solid red;' <% } %> />
+            <input type="password" name="password" required />
             <label>Password</label>
           </div>
           <div class="forgot-pass">
-            <a href="#">Forgot your password?</a>
+            <a href="/login">Already a User? Try logsin</a>
           </div>
-          <button type="submit" class="btn">Login</button>
-
-          <!-- <div class="signup-link">
-            <a href="#">Signup</a>
-          </div> -->
+          <button type="submit" class="btn">Create User</button>
         </form>
         <a href="/"><button class="backbtn">Back</button></a>
       </div>
     </div>
-    <!-- 
-
- -->
-    <!-- footer goes here -->
-
-    <!-- 
-
-     -->
   </body>
 </html>
