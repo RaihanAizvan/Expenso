@@ -62,7 +62,7 @@ themeButton.onclick = () => {
   body.classList.toggle("dark")
   const theme = body.classList.contains("dark") ? "dark" : "light"
   localStorage.setItem("theme", theme)
-  console.log(`switched to ${theme} theme`)
+  // console.log(`switched to ${theme} theme`)
 }
 //body
 

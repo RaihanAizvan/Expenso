@@ -1,14 +1,21 @@
 const mongoose = require("mongoose")
+require("dotenv").config() // Ensure this is at the top
 
-// const connection = "mongodb+srv://raihan:raihan6238880997@cluster0.hfx7kcx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+// Log environment variables
+console.log("NODE_ENV:", process.env.NODE_ENV)
+console.log("MONGODB_URI:", process.env.MONGODB_URI)
+
+// Database connection
+const dbURI =
+  process.env.NODE_ENV === "production"
+    ? process.env.MONGODB_URI
+    : "mongodb+srv://raihan:raihan6238880997@cluster0.hfx7kcx.mongodb.net/expenso?retryWrites=true&w=majority&appName=Cluster0" // Replace with your local MongoDB URI
 mongoose
-  .connect(
-    "mongodb+srv://raihan:raihan6238880997@cluster0.hfx7kcx.mongodb.net/expenso?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(dbURI)
   .then(() => console.log("connected to database"))
   .catch((err) => console.error("Error connecting to database", err))
 
-const userShcema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -16,14 +23,13 @@ const userShcema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
   password: {
     type: String,
     required: true,
   },
   darkTheme: {
-    // this will store the current theme of user
     type: Boolean,
     default: false,
   },
@@ -33,6 +39,6 @@ const userShcema = new mongoose.Schema({
   },
 })
 
-const userCollection = new mongoose.model("User", userShcema)
+const userCollection = mongoose.model("User", userSchema)
 
 module.exports = userCollection

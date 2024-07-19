@@ -5,12 +5,14 @@
   box-sizing: border-box;
 }
 :root {
-  --grad: url(../images/360_F_303634863_N4jpxBu2Kh3YXBAfs44Eow4a6JfXtd46.jpg);
+  /* --grad: url(../images/360_F_303634863_N4jpxBu2Kh3YXBAfs44Eow4a6JfXtd46.jpg); */
+  --grad: url(../images/image.png);
   /* --grad:  radial-gradient(circle, rgba(255, 255, 255, 0.404) 0%, rgba(255, 241, 164, 0.473) 50%, rgba(194, 177, 122, 0.623) 100%); */
   font-size: 15px;
 }
 .dark {
-  background: url(../images/HD-wallpaper-black-dark-full-gray-solid-thumbnail.jpg);
+  background: url(../images/depositphotos_393790446-stock-photo-modern-wave-stripes-white-background-1.webp);
+  background-size: 750px;
   color: white;
 }
 .dark .header-div {
@@ -28,13 +30,13 @@
 }
 
 .dark .container-section aside {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.576);
 }
 .dark .container-section aside > div {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.345);
   border-left: 1px solid rgba(36, 36, 36, 0.2);
   border-top: 1px solid rgba(68, 68, 68, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.315);
   transition: all 0.2s;
 }
 .dark .container-section aside > div:hover {
@@ -47,16 +49,41 @@
   color: rgb(189, 189, 189);
 }
 .dark .container-section .inner-section .grid-container-div .grid-item {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.212);
 }
 .dark .container-section .inner-section .grid-container-div .grid-item:hover {
-  box-shadow: 0 3px 30px rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 30px rgba(255, 255, 255, 0.068);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 15px;
 }
-.dark .container-section .inner-section .grid-container-div .grid-item-1 div {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.dark .container-section .inner-section .grid-container-div .grid-item div {
+  border: 1px solid rgba(255, 255, 255, 0.245);
 }
+/* 
 
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+11111111111111111111111111111111111111111
+
+*/
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-1
+  .third-section
+  .dropdown {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
 .dark
   .container-section
   .inner-section
@@ -66,6 +93,16 @@
   .input-field:focus {
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-1
+  .third-section
+  .input-field:hover {
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 5px 4px 10px rgba(255, 255, 255, 0.2);
+}
 
 .dark
   .container-section
@@ -74,8 +111,9 @@
   .grid-item-1
   .third-section
   .input-field {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.335);
   color: white;
+  transition: 0.2s all linear;
 }
 .dark
   .container-section
@@ -124,9 +162,234 @@
   .third-section:hover {
   background: rgba(255, 255, 255, 0.14);
 }
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item
+  .third-section
+  .input-field::placeholder {
+  color: rgba(255, 255, 255, 0.486);
+}
 
-.dark .container-section .modal-content {
-  background-color: #000000fe;
+/* grid item 2
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222
+grid item 2 */
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .dropdown {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .input-field:focus {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .input-field:hover {
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 5px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .input-field {
+  border: 1px solid rgba(255, 255, 255, 0.335);
+  color: white;
+  transition: 0.2s all linear;
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .input-field:focus {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .submit-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .submit-btn:hover {
+  box-shadow: 5px 4px 10px rgba(255, 255, 255, 0.2);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .first-section:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-1
+  .third-section
+  .second-section:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-2
+  .third-section
+  .third-section:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* .grid-item-3
+333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+3333333333333333333333333333333333333333333333
+
+grid item 3 */
+
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .dropdown {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .input-field:focus {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .input-field:hover {
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 5px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .input-field {
+  border: 1px solid rgba(255, 255, 255, 0.335);
+  color: white;
+  transition: 0.2s all linear;
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .input-field:focus {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .submit-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .first-section:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .second-section:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item-3
+  .third-section
+  .third-section:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.dark .modal .modal-content {
+  background-color: #111111fe;
   border-color: #fffaea89;
 }
 .dark .header-div .right-section-div img {
@@ -134,7 +397,6 @@
 }
 body {
   font-family: "Quicksand", sans-serif;
-
   font-weight: 200;
   color: rgb(0, 0, 0);
   background: var(--grad);
@@ -377,11 +639,27 @@ inner section */
   display: flex;
   justify-content: space-around;
 }
+.grid-item-1 .third-section .dropdown {
+  width: 10%;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  height: 35px;
+  margin: 0 10px;
+  text-align: right;
+  cursor: pointer;
+  font-size: 100%;
+  display: flex;
+  align-items: self-end;
+  justify-content: center;
+}
 .grid-item-1 .third-section .input-field {
   background: transparent !important;
   border: none;
   min-width: none;
   height: 35px;
+  padding-left: 10px;
+  margin-right: 10px;
 }
 .grid-item-1 .third-section .input-field:focus {
   outline: none;
@@ -409,9 +687,25 @@ inner section */
   outline: none;
   display: inline;
   border-radius: 5px;
+  margin-right: 5px;
 }
 
-/* grid-item 2 */
+/* grid-item 2 
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+222222222222222222222222222222222
+*/
 .grid-item-2 {
   grid-area: item2;
   display: flex;
@@ -448,6 +742,20 @@ inner section */
 .grid-item-2 .third-section div {
   height: 35px;
 }
+.grid-item-2 .third-section .dropdown {
+  width: 10%;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  height: 35px;
+  margin: 0 10px;
+  text-align: right;
+  cursor: pointer;
+  font-size: 100%;
+  display: flex;
+  align-items: self-end;
+  justify-content: center;
+}
 .grid-item-2 .third-section form {
   display: flex;
   justify-content: space-around;
@@ -457,6 +765,8 @@ inner section */
   border: none;
   min-width: none;
   height: 35px;
+  margin-right: 10px;
+  padding-left: 5px;
 }
 .grid-item-2 .third-section .input-field:focus {
   outline: none;
@@ -484,9 +794,22 @@ inner section */
   outline: none;
   display: inline;
   border-radius: 5px;
+  margin-right: 5px;
 }
 
-/* grid item 3 */
+/* grid item 3 
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+33333333333333333333333
+*/
 
 .grid-item-3 {
   grid-area: item3;
@@ -518,7 +841,7 @@ inner section */
 .grid-item-3 .third-section {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   /* padding: 0 10px; */
 }
 .grid-item-3 .third-section div {
@@ -527,25 +850,37 @@ inner section */
 .grid-item-3 .third-section form {
   display: flex;
   justify-content: space-around;
+  width: 100%;
+}
+.grid-item-3 .third-section .dropdown {
+  width: 10%;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  height: 35px;
+  margin: 0 10px;
+  text-align: right;
+  cursor: pointer;
+  font-size: 100%;
+  display: flex;
+  align-items: self-end;
+  justify-content: center;
 }
 .grid-item-3 .third-section .input-field {
   background: transparent !important;
-  border: none;
-  min-width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+  padding-left: 10px;
+  /* min-width: 90%; */
+  width: 80%;
   height: 35px;
 }
 .grid-item-3 .third-section .input-field:focus {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: #fff;
 }
 
-.grid-item-3 .third-section .input-field {
-  background: transparent !important;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  height: 35px;
-  min-width: none;
-  width: 38%;
-}
 .grid-item-3 .third-section .input-field:focus {
   outline: none;
   background-color: white;
@@ -560,6 +895,7 @@ inner section */
   outline: none;
   display: inline;
   border-radius: 5px;
+  margin-right: 5px;
 }
 .grid-item-4 {
   grid-area: item4;
@@ -698,6 +1034,7 @@ section div.inner-section .grid-container-div .grid-item:hover {
     padding-top: 80px;
     width: 100%; /* Ensure the grid container takes the full width */
     height: 100%;
+    /* background-color: #98C379; */
   }
   .grid-item-1 .second-section p {
     font-size: 200%;
