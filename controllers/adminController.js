@@ -40,7 +40,16 @@ exports.postLogin = (req, res) => {
 }
 
 exports.getHome = (req, res) => {
-  res.send('home')
+  res.render('admin/adminHome')
 }
 
-// middleware
+
+exports.postLogout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      throw err
+      console.log(err)
+    }
+    res.redirect("/admin")
+  })
+}

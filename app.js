@@ -34,10 +34,11 @@ const adminRouter = require("./routes/adminRoute")
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
 
+
 //********************************************************************** */
 
 // Setting up middleware
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json())
 app.use(noCachee())
 app.use(express.urlencoded({ extended: true }))
