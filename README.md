@@ -1,7 +1,6 @@
 # Expenso
 
 
-
 Expenso is your ultimate personal expense tracker app that simplifies managing your finances and tasks. Whether it's keeping tabs on your expenses, tracking income, or staying on top of your to-do list, Expenso has got you covered!
 
 Check out the live demo [here](https://expenso-8ve6.onrender.com/).
