@@ -16,7 +16,8 @@
   color: white;
 }
 .dark .header-div {
-  background: rgba(255, 255, 255, 0.07);
+  /* background: rgba(255, 255, 255, 0.07); */
+  background-color: rgba(255, 226, 168, 0.129);
 }
 .dark .header-div .right-section-div {
   border: 0;
@@ -26,7 +27,8 @@
   color: white;
 }
 .dark .header-div .right-section-div #logoutLink a img {
-  background: url(/public/icons/login.svg) !important;
+  background: url(/public/icons/login.svg);
+  width: 10px !important;
 }
 
 .dark .container-section aside {
@@ -38,6 +40,7 @@
   border-top: 1px solid rgba(68, 68, 68, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.315);
   transition: all 0.2s;
+  background-color: rgba(255, 226, 168, 0.039);
 }
 .dark .container-section aside > div:hover {
   border-right: 2px solid rgba(255, 255, 255, 0.3);
@@ -75,6 +78,23 @@
 11111111111111111111111111111111111111111
 
 */
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item
+  .first-section {
+  background-color: rgba(255, 226, 168, 0.049);
+}
+.dark
+  .container-section
+  .inner-section
+  .grid-container-div
+  .grid-item
+  .third-section {
+  background-color: rgba(255, 226, 168, 0.029);
+}
+
 .dark
   .container-section
   .inner-section
@@ -423,6 +443,7 @@ ul {
   position: absolute;
   background: rgba(0, 0, 0, 0.07);
   cursor: pointer;
+  z-index: 1;
 }
 .header-div .left-section-div {
   /* background: var(--grad); */
@@ -452,7 +473,7 @@ ul {
 }
 .header-div .right-section-div img.logo {
   border-radius: 30px;
-  padding: 7px;
+  padding: 5px;
   transition: all linear 0.1s;
 }
 .header-div .right-section-div img.theme-switcher {
@@ -595,6 +616,13 @@ aside p {
   flex-direction: row;
 }
 
+.grid-item .first-section {
+  background-color: rgba(255, 226, 168, 0.069);
+}
+.grid-item .third-section {
+  background-color: rgba(255, 226, 168, 0.069);
+}
+
 /* 
 inner section */
 /* grid item 1 */
@@ -630,6 +658,7 @@ inner section */
   flex: 1;
   display: flex;
   justify-content: flex-end;
+
   /* padding: 0 10px; */
 }
 .grid-item-1 .third-section div {

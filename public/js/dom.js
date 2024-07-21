@@ -66,5 +66,55 @@ themeButton.onclick = () => {
 }
 //body
 
+// option for selecting the sort in admin panel
 
-// Check if session is valid on page load
+document.getElementById("sortSelect").addEventListener("change", function () {
+  const isAscending = this.value === "0"
+  const userItems = Array.from(document.querySelectorAll(".grid-item"))
+
+  userItems.sort((a, b) => {
+    const userAId = a.querySelector(".flex-item-2").textContent
+    const userBId = b.querySelector(".flex-item-2").textContent
+    return isAscending
+      ? userAId.localeCompare(userBId)
+      : userBId.localeCompare(userAId)
+  })
+
+  const gridContainer = document.getElementById("gridContainer")
+  gridContainer.querySelectorAll(".grid-item").forEach((item) => item.remove()) // Clear existing items
+  userItems.forEach((item) => gridContainer.appendChild(item)) // Append sorted items
+
+  //admin.create suer
+})
+let addUserButton = document.querySelector(".adduser")
+let isAddingUser = false
+
+addUserButton.addEventListener("click", function (event) {
+  event.preventDefault()
+  if (!isAddingUser) {
+    const gridContainer = document.getElementById("gridContainer")
+    const userCount = gridContainer.querySelectorAll(".grid-item").length
+    const newUser = document.createElement("div")
+    newUser.classList.add("grid-item")
+    newUser.innerHTML = `
+    <form action='/signup' method= "POST">
+      <div class="flex-item-1 flex-item">${userCount + 1}</div>
+      <div class="flex-item-2 flex-item">User id</div>
+      <div class="flex-item-3 flex-item"><input type="text" name="userName" placeholder="Name"></div>
+      <div class="flex-item-4 flex-item"><input type="text" name="userEmail" placeholder="Email"></div>
+      <div class="flex-item-5 flex-item">
+        <input type="text" name="userPassword" placeholder="Password">
+        <button type="submit">&check;</button>
+      </div>
+      </form>
+    `
+    gridContainer.appendChild(newUser) // Changed from insertBefore to appendChild
+    this.textContent = "Cancel"
+    isAddingUser = true
+  } else {
+    const gridItems = document.querySelectorAll(".grid-item")
+    gridItems[gridItems.length - 1].remove()
+    this.textContent = "Add User"
+    isAddingUser = false
+  }
+})

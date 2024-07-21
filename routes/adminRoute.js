@@ -13,6 +13,5 @@ router.get("/home",middleware.isAdmin, controller.getHome)
 
 router.post('/logout',controller.postLogout)
 
-
 module.exports = router
 

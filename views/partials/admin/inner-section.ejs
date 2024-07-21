@@ -1,0 +1,47 @@
+<div class="inner-section">
+  <div class="grid-container-div" id="gridContainer">
+    <div class="search-bar">
+      <form action="">
+        <input type="text" placeholder="Search User" />
+        <button type="submit">&#128270;</button>
+      </form>
+      <select name="sort" id="sortSelect">
+        <option value="0">Accending</option>
+        <option value="1">descending</option>
+      </select>
+      <a href="/create-user" class="adduser">+ Create a User</a>
+    </div>
+    <div class="grid-header">
+      <div class="flex-item-1 flex-item">Sl</div>
+      <div class="flex-item-2 flex-item">User ID</div>
+      <div class="flex-item-3 flex-item">Name</div>
+      <div class="flex-item-4 flex-item">Email</div>
+      <div class="flex-item-5 flex-item">Actions</div>
+    </div>
+    <% user.reverse().forEach((user, index) => { %>
+    <div class="grid-item">
+      <div class="flex-item-1 flex-item"><%= index + 1 %></div>
+      <div class="flex-item-2 flex-item"><%= user._id %></div>
+      <div class="flex-item-3 flex-item"><%= user.name %></div>
+      <div class="flex-item-4 flex-item"><%= user.email %></div>
+      <div class="flex-item-5 flex-item">
+        <div class="edit-svg">
+          <a href="/edit"
+            ><img height="20" width="20" src="/icons/edit.png"
+          /></a>
+        </div>
+        <div class="delete-svg">
+          <a href="/delete"
+            ><img height="25" width="25" src="/icons/delete2.png"
+          /></a>
+        </div>
+        <div class="block-svg">
+          <a href="/block"
+            ><img height="20" width="20" src="/icons/block.png"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>

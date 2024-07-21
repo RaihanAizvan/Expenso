@@ -36,11 +36,20 @@ exports.postLogin = (req, res) => {
       email: req.body.email,
     })
   }
-  console.log(req.session)  
+  
 }
 
-exports.getHome = (req, res) => {
-  res.render('admin/adminHome')
+exports.getHome = async (req, res) => {
+  let userDetails;
+  try{
+    userDetails = await user.find()
+  
+  }
+  catch(error){
+    console.error("Error fetching user details:", error)
+    res.status(500).send("Internal Server Error")
+  }
+  res.render('admin/adminHome',{user:userDetails})
 }
 
 
