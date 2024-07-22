@@ -11,9 +11,7 @@ const adminDetails = {
 }
 
 exports.getAdmin = (req, res, next) => {
- 
-    res.redirect("/admin/home")
-  
+  res.redirect("/admin/home")
 }
 exports.getLogin = (req, res, next) => {
   if (req.session.adminEmail && req.session.adminEmail === adminDetails.email) {
@@ -36,22 +34,28 @@ exports.postLogin = (req, res) => {
       email: req.body.email,
     })
   }
-  
 }
 
 exports.getHome = async (req, res) => {
-  let userDetails;
-  try{
-    userDetails = await user.find()
-  
-  }
-  catch(error){
+  let userDetails
+  try {
+    var search = ""
+    if (req.query.search) {
+      search = req.query.search
+    }
+    userDetails = await user.find({
+      $or: [
+        { name: { $regex: "^" + search, $options: "i" } },
+       
+      ],
+    })
+
+    res.render("admin/adminHome", { user: userDetails })
+  } catch (error) {
     console.error("Error fetching user details:", error)
     res.status(500).send("Internal Server Error")
   }
-  res.render('admin/adminHome',{user:userDetails})
 }
-
 
 exports.postLogout = (req, res) => {
   req.session.destroy((err) => {

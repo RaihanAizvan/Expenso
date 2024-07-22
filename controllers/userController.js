@@ -1,18 +1,14 @@
 const bcrypt = require("bcrypt")
 const user = require("../models/user")
 
-
 exports.getEntry = (req, res) => {
-  req.session.adminEmail=false
+  req.session.adminEmail = false
   if (req.session && req.session.user) {
     res.redirect("/home")
   } else {
     res.render("entry/entry")
   }
-  
 }
-
-
 
 exports.postLogin = async (req, res) => {
   try {
@@ -64,7 +60,7 @@ exports.getLogout = async (req, res) => {
 }
 
 exports.getLogin = (req, res) => {
-  req.session.adminEmail=false
+  req.session.adminEmail = false
   if (req.session && req.session.user) {
     res.redirect("/home")
   } else {
@@ -73,7 +69,7 @@ exports.getLogin = (req, res) => {
 }
 
 exports.getSignup = (req, res) => {
-  req.session.adminEmail=false
+  req.session.adminEmail = false
   if (req.session && req.session.user) {
     res.redirect("/home")
   } else {
@@ -91,22 +87,44 @@ exports.postSignup = async (req, res) => {
   console.log(currentUserDetails)
 
   if (currentUserDetails) {
-    return res.render("login/signup", {
-      error: "User already exists",
-      email: req.body.email,
-      name: req.body.name,
-    })
+    console.log(req.session)
+    if (req.session.adminEmail) {
+      let userDetails
+      try {
+        userDetails = await user.find()
+      } catch (error) {
+        console.error("Error fetching user details:", error)
+        res.status(500).send("Internal Server Error")
+      }
+      return res.render("admin/adminHome", {
+        error: "User already exists",
+        email: req.body.email,
+        name: req.body.name,
+        user: userDetails,
+      })
+      console.log("adminhome rendered successfully")
+    } else {
+      return res.render("login/signup", {
+        error: "User already exists",
+        email: req.body.email,
+        name: req.body.name,
+      })
+    }
   }
 
   const hashedPassword = await bcrypt.hash(data.password, 10)
   data.password = hashedPassword
   await user.create(data)
   console.log(`User ${data.name} created successfully`)
-  res.redirect("/login")
+  if (req.session.adminEmail) {
+    res.redirect("/admin")
+  } else {
+    res.redirect("/login")
+  }
 }
 
 exports.getHome = async (req, res) => {
-  req.session.adminEmail=false
+  req.session.adminEmail = false
   try {
     const currentUserDetails = await user.findOne({ email: req.session.user })
     res.render("home/home", {

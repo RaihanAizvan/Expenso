@@ -29,8 +29,4 @@ Follow these steps to get a local copy of Expenso up and running:
 
 1. **Clone the repository:**
    ```sh
-<<<<<<< HEAD
    git clone https://github.com/yourusername/expenso.git
-=======
-   git clone https://github.com/yourusername/expenso.git
->>>>>>> a52f5da6733fb455c889269b0d26c9180acf105a

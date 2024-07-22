@@ -100,10 +100,10 @@ addUserButton.addEventListener("click", function (event) {
     <form action='/signup' method= "POST">
       <div class="flex-item-1 flex-item">${userCount + 1}</div>
       <div class="flex-item-2 flex-item">User id</div>
-      <div class="flex-item-3 flex-item"><input type="text" name="userName" placeholder="Name"></div>
-      <div class="flex-item-4 flex-item"><input type="text" name="userEmail" placeholder="Email"></div>
+      <div class="flex-item-3 flex-item"><input type="text" name="name" placeholder="Name"></div>
+      <div class="flex-item-4 flex-item"><input type="text" name="email" placeholder="Email"></div>
       <div class="flex-item-5 flex-item">
-        <input type="text" name="userPassword" placeholder="Password">
+        <input type="text" name="password" placeholder="Password">
         <button type="submit">&check;</button>
       </div>
       </form>

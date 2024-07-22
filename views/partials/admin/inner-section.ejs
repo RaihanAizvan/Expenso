@@ -1,9 +1,14 @@
 <div class="inner-section">
   <div class="grid-container-div" id="gridContainer">
     <div class="search-bar">
-      <form action="">
-        <input type="text" placeholder="Search User" />
-        <button type="submit">&#128270;</button>
+      <form>
+        <input
+          type="text"
+          placeholder="Search User"
+          id="search"
+          name="search"
+        />
+        <button type="submit" id="searchButton">&#128270;</button>
       </form>
       <select name="sort" id="sortSelect">
         <option value="0">Accending</option>
@@ -18,7 +23,7 @@
       <div class="flex-item-4 flex-item">Email</div>
       <div class="flex-item-5 flex-item">Actions</div>
     </div>
-    <% user.reverse().forEach((user, index) => { %>
+    <% locals.user.forEach((user, index) => { %>
     <div class="grid-item">
       <div class="flex-item-1 flex-item"><%= index + 1 %></div>
       <div class="flex-item-2 flex-item"><%= user._id %></div>
@@ -42,6 +47,8 @@
         </div>
       </div>
     </div>
-    <% }) %>
+    <% }) %> <%if(locals.error){%>
+    <p class="error"><%=locals.error%></p>
+    <%}%>
   </div>
 </div>
