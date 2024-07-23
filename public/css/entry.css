@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
+  background: url(/images/image.png);
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  /* padding: 1% 10%; */
+  margin: 15px 0;
+  color: white;
+  background-color: rgb(33, 33, 33);
+  border-radius: 20px;
+}
+h1 {
+  font-size: 85.333333333333px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+p {
+  margin: 15px 0;
+  padding: 0;
+  /* font-size: 20px; */
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 550px;
+  width: 20%;
+  margin: 5% auto;
+  padding: 6.75vw;
+  border-radius: 50px;
+  border: 1px solid #ffffff;
+  border-right-color: rgba(120, 120, 120, 0.234);
+  border-bottom-color: rgba(120, 120, 120, 0.234);
+  box-shadow: inset 14px 14px 13px #ffffffa1, inset -5px -5px 5px #2828284b;
+}
+.first-section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+.first-section > a {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 16px;
+  box-shadow: inset 4px 0px 3px #ffffff41, inset 0 -5px 5px #28282823;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.333s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.first-section > a:hover {
+  box-shadow: inset 4px 4px 5px #fffffff8, inset -5px -5px 5px #2828289a;
+}
+.first-section > a > div {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.second-section {
+  width: 100%;
+}
+.third-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.third-section a {
+  outline: none;
+  cursor: pointer;
+  padding: 4% 15%;
+  margin: 15px 0;
+  border-radius: 17px;
+  transition: all 0.333s cubic-bezier(0.65, 0, 0.35, 1);
+  background: #ffffff23;
+  box-shadow: inset 4px 4px 3px #ffffff5a, inset -5px -5px 5px #2828282a;
+}
+.third-section a:hover {
+  box-shadow: inset 4px 4px 5px #fffffff8, inset -5px -5px 5px #2828289a;
+}

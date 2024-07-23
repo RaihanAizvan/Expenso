@@ -118,3 +118,50 @@ addUserButton.addEventListener("click", function (event) {
     isAddingUser = false
   }
 })
+
+//editing algorith
+document.querySelectorAll(".edit-svg a").forEach((editLink) => {
+  editLink.addEventListener("click", function (event) {
+    event.preventDefault()
+    const gridItem = this.closest(".grid-item")
+    const nameElement = gridItem.querySelector(".flex-item-3")
+    const emailElement = gridItem.querySelector(".flex-item-4")
+    const userIdElement = gridItem.querySelector("#userID") // Changed to directly target the userId element within the gridItem
+
+    // Create form elements
+    const nameInput = document.createElement("input")
+    nameInput.type = "text"
+    nameInput.value = nameElement.textContent
+    nameInput.name = "name"
+
+    const emailInput = document.createElement("input")
+    emailInput.type = "text"
+    emailInput.value = emailElement.textContent
+    emailInput.name = "email"
+    emailInput.style.marginLeft = "10px"
+    emailInput.style.marginRight = "10px"
+
+    let userId = userIdElement.textContent // Changed to get userId from the element within the gridItem
+    console.log(userId)
+    const form = document.createElement("form")
+    form.action = `/admin/home/editUser?=${userId}` // Assuming there's a route to handle the edit
+    form.method = "POST"
+
+    const submitButton = document.createElement("button") // Changed to create a new button instead of reusing an existing one
+    submitButton.type = "submit"
+    const img = document.createElement("img")
+    img.src = "/icons/tick.png"
+    img.alt = "Submit"
+    submitButton.appendChild(img)
+
+    form.appendChild(nameInput)
+    form.appendChild(emailInput)
+    form.appendChild(submitButton) // Add a submit button next to the form fields
+
+    nameElement.textContent = ""
+    emailElement.textContent = ""
+
+    nameElement.appendChild(nameInput)
+    emailElement.appendChild(form) // Changed to append the form including the submit button next to the email input
+  })
+})

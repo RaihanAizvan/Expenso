@@ -53,7 +53,7 @@ exports.getHome = async (req, res) => {
     res.render("admin/adminHome", { user: userDetails })
   } catch (error) {
     console.error("Error fetching user details:", error)
-    res.status(500).send("Internal Server Error")
+    res.status(500).render("admin/login", { dbError: 'Cannot connect to database' })
   }
 }
 
@@ -65,4 +65,15 @@ exports.postLogout = (req, res) => {
     }
     res.redirect("/admin")
   })
+}
+
+exports.getDeleteUser = async(req, res) => {
+  console.log('entered the /deleteOne rote');
+  try{
+    await user.deleteOne({_id:req.query.id})
+    res.redirect('/admin')
+  }
+  catch (err) {
+    console.log('error deleting user', err);
+  }
 }

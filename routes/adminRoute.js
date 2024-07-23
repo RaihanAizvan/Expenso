@@ -13,5 +13,7 @@ router.get("/home",middleware.isAdmin, controller.getHome)
 
 router.post('/logout',controller.postLogout)
 
+router.get('/deleteUser',  controller.getDeleteUser)
+
 module.exports = router
 

@@ -23,29 +23,34 @@
       <div class="flex-item-4 flex-item">Email</div>
       <div class="flex-item-5 flex-item">Actions</div>
     </div>
-    <% locals.user.forEach((user, index) => { %>
+    <% locals.user.forEach((useri, index) => { %>
     <div class="grid-item">
-      <div class="flex-item-1 flex-item"><%= index + 1 %></div>
-      <div class="flex-item-2 flex-item"><%= user._id %></div>
-      <div class="flex-item-3 flex-item"><%= user.name %></div>
-      <div class="flex-item-4 flex-item"><%= user.email %></div>
-      <div class="flex-item-5 flex-item">
-        <div class="edit-svg">
-          <a href="/edit"
-            ><img height="20" width="20" src="/icons/edit.png"
-          /></a>
+      <form id="abc" action="/admin/home/editUser?id=<%=useri._id%>" method="POST">
+        <div class="flex-item-1 flex-item"><%= index + 1 %></div>
+        <div class="flex-item-2 flex-item"><%= useri._id %></div>
+        <div class="flex-item-3 flex-item"><%= useri.name %></div>
+        <div class="flex-item-4 flex-item"><%= useri.email %>
+          <!-- <a href="/admin/home/editUser?id=<%=useri._id%>"><button id="button1">SUBMIT</button></a> -->
         </div>
-        <div class="delete-svg">
-          <a href="/delete"
-            ><img height="25" width="25" src="/icons/delete2.png"
-          /></a>
+        <div class="flex-item-5 flex-item">
+          <div class="edit-svg">
+            <a href="#" id="editUser">
+              ><img height="20" width="20" src="/icons/edit.png"
+            /></a>
+          </div>
+          <p id="userID" style="display: none;"><%=useri._id%></p>
+          <div class="delete-svg">
+            <a href="/admin/deleteUser?id=<%=useri._id%>"
+              ><img height="25" width="25" src="/icons/delete2.png"
+            /></a>
+          </div>
+          <div class="block-svg">
+            <a href="/block"
+              ><img height="20" width="20" src="/icons/block.png"
+            /></a>
+          </div>
         </div>
-        <div class="block-svg">
-          <a href="/block"
-            ><img height="20" width="20" src="/icons/block.png"
-          /></a>
-        </div>
-      </div>
+      </form>
     </div>
     <% }) %> <%if(locals.error){%>
     <p class="error"><%=locals.error%></p>

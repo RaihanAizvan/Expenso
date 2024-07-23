@@ -1,9 +1,6 @@
 const mongoose = require("mongoose")
-require("dotenv").config() // Ensure this is at the top
+require("dotenv").config()
 
-// Log environment variables
-console.log("NODE_ENV:", process.env.NODE_ENV)
-console.log("MONGODB_URI:", process.env.MONGODB_URI)
 
 // Database connection
 const dbURI =

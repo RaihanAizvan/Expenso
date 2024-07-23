@@ -13,6 +13,9 @@
         <% if (typeof error !== 'undefined') { %>
         <p class="error"><%= error %></p>
         <% } %>
+        <% if (typeof dbError !== 'undefined') { %>
+        <p class="error"><%= dbError %></p>
+        <% } %>
         <form action="/admin/login" method="post">
           <div class="input-box">
             <input
