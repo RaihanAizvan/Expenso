@@ -67,7 +67,6 @@ themeButton.onclick = () => {
 //body
 
 // option for selecting the sort in admin panel
-
 document.getElementById("sortSelect").addEventListener("change", function () {
   const isAscending = this.value === "0"
   const userItems = Array.from(document.querySelectorAll(".grid-item"))
@@ -83,9 +82,9 @@ document.getElementById("sortSelect").addEventListener("change", function () {
   const gridContainer = document.getElementById("gridContainer")
   gridContainer.querySelectorAll(".grid-item").forEach((item) => item.remove()) // Clear existing items
   userItems.forEach((item) => gridContainer.appendChild(item)) // Append sorted items
-
-  //admin.create suer
 })
+
+//admin.create suer
 let addUserButton = document.querySelector(".adduser")
 let isAddingUser = false
 
@@ -104,9 +103,9 @@ addUserButton.addEventListener("click", function (event) {
       <div class="flex-item-4 flex-item"><input type="text" name="email" placeholder="Email"></div>
       <div class="flex-item-5 flex-item">
         <input type="text" name="password" placeholder="Password">
-        <button type="submit">&check;</button>
+        <button type="submit" class="submit-button">Submit</button>
       </div>
-      </form>
+    </form>
     `
     gridContainer.appendChild(newUser) // Changed from insertBefore to appendChild
     this.textContent = "Cancel"
@@ -121,47 +120,76 @@ addUserButton.addEventListener("click", function (event) {
 
 //editing algorith
 document.querySelectorAll(".edit-svg a").forEach((editLink) => {
+  let isEditing = false; // Flag to track if we're in edit mode
+  let previousName = ""; // Variable to store the previous name
+  let previousEmail = ""; // Variable to store the previous email
   editLink.addEventListener("click", function (event) {
     event.preventDefault()
-    const gridItem = this.closest(".grid-item")
-    const nameElement = gridItem.querySelector(".flex-item-3")
-    const emailElement = gridItem.querySelector(".flex-item-4")
-    const userIdElement = gridItem.querySelector("#userID") // Changed to directly target the userId element within the gridItem
+    if (!isEditing) { // If we're not in edit mode, enter edit mode
+      const gridItem = this.closest(".grid-item")
+      const nameElement = gridItem.querySelector(".flex-item-3")
+      const emailElement = gridItem.querySelector(".flex-item-4")
+      const userIdElement = gridItem.querySelector("#userID") // Changed to directly target the userId element within the gridItem
 
-    // Create form elements
-    const nameInput = document.createElement("input")
-    nameInput.type = "text"
-    nameInput.value = nameElement.textContent
-    nameInput.name = "name"
+      // Store the previous text
+      previousName = nameElement.textContent;
+      previousEmail = emailElement.textContent;
 
-    const emailInput = document.createElement("input")
-    emailInput.type = "text"
-    emailInput.value = emailElement.textContent
-    emailInput.name = "email"
-    emailInput.style.marginLeft = "10px"
-    emailInput.style.marginRight = "10px"
+      // Create form elements
+      const nameInput = document.createElement("input")
+      nameInput.type = "text"
+      nameInput.value = nameElement.textContent
+      nameInput.name = "editName"
 
-    let userId = userIdElement.textContent // Changed to get userId from the element within the gridItem
-    console.log(userId)
-    const form = document.createElement("form")
-    form.action = `/admin/home/editUser?=${userId}` // Assuming there's a route to handle the edit
-    form.method = "POST"
+      const emailInput = document.createElement("input")
+      emailInput.type = "email"
+      emailInput.value = emailElement.textContent
+      emailInput.name = "editEmail"
+      emailInput.style.marginLeft = "10px"
+      emailInput.style.marginRight = "10px"
 
-    const submitButton = document.createElement("button") // Changed to create a new button instead of reusing an existing one
-    submitButton.type = "submit"
-    const img = document.createElement("img")
-    img.src = "/icons/tick.png"
-    img.alt = "Submit"
-    submitButton.appendChild(img)
+      let userId = userIdElement.textContent // Changed to get userId from the element within the gridItem
+      console.log(userId)
+      const form = document.createElement("form")
+      form.action = `/admin/editUser?=${userId}` // Assuming there's a route to handle the edit
+      form.method = "POST"
 
-    form.appendChild(nameInput)
-    form.appendChild(emailInput)
-    form.appendChild(submitButton) // Add a submit button next to the form fields
+      const submitButton = document.createElement("button") // Changed to create a new button instead of reusing an existing one
+      submitButton.type = "submit"
+      
+      const img = document.createElement("img")
+      img.src = "/icons/tick.png"
+      img.alt = "Submit"
+      submitButton.appendChild(img)
 
-    nameElement.textContent = ""
-    emailElement.textContent = ""
+      form.appendChild(nameInput)
+      form.appendChild(emailInput)
+      form.appendChild(submitButton) // Add a submit button next to the form fields
 
-    nameElement.appendChild(nameInput)
-    emailElement.appendChild(form) // Changed to append the form including the submit button next to the email input
+      nameElement.textContent = ""
+      emailElement.textContent = ""
+
+      nameElement.appendChild(nameInput)
+      emailElement.appendChild(emailInput) // Separate input fields for name and email
+
+      isEditing = true; // Set flag to indicate we're in edit mode
+      this.textContent = "X" // Change link text to "Cancel"
+
+    } else { // If we're in edit mode, cancel edit and return to previous state
+      const gridItem = this.closest(".grid-item")
+      const nameElement = gridItem.querySelector(".flex-item-3")
+      const emailElement = gridItem.querySelector(".flex-item-4")
+
+      // Remove form elements
+      nameElement.removeChild(nameElement.querySelector("input"))
+      emailElement.removeChild(emailElement.querySelector("input"))
+
+      // Restore original text content
+      nameElement.textContent = previousName
+      emailElement.textContent = previousEmail
+
+      isEditing = false; // Reset flag to indicate we're not in edit mode
+      this.innerHTML = "<img height='20' width='20' src='/icons/edit.png'>" // Change back to the previous edit image
+    }
   })
 })

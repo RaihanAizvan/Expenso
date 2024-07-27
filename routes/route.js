@@ -14,9 +14,8 @@ router.get("/signup", controller.getSignup)
 
 router.post("/signup", controller.postSignup)
 
-router.get("/logout", controller.getLogout)
+router.get("/logout", controller.getLogout) 
 
 router.get("/home", middleware.isLogged, middleware.noCache, controller.getHome)
-
 
 module.exports = router

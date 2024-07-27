@@ -68,12 +68,21 @@ exports.postLogout = (req, res) => {
 }
 
 exports.getDeleteUser = async(req, res) => {
-  console.log('entered the /deleteOne rote');
   try{
     await user.deleteOne({_id:req.query.id})
     res.redirect('/admin')
   }
   catch (err) {
     console.log('error deleting user', err);
+  }
+}
+
+exports.getEditUser= async(req, res) => {
+  console.log('entered the /edituser',req.body);
+  try {
+    await user.updateOne({_id:req.query.id},{$set:{name:req.body.editName, email: req.body.editEmail}})
+    res.redirect('/admin')
+  } catch (error) {
+    console.log('error',err);
   }
 }
